@@ -14,8 +14,8 @@ export default function AboutTheGame() {
                 <h1 className="text-4xl font-bold text-white mb-12">About the game</h1>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 mb-12">
-                    <video className="h-full w-full rounded-lg" controls autoPlay>
-                        {/* <source src={GreyhoundVideo} type="video/mp4" /> */}
+                    <video className="h-full w-full rounded-lg" controls autoPlay style={{ width: "100%" }}>
+                        <source src="https://old.abeta.co.uk/resources/GW_video.mp4" />
                     </video>
                 </div>
 
