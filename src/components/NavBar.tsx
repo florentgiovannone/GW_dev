@@ -19,23 +19,23 @@ export default function NavBar() {
                     <div className="hidden lg:flex items-center justify-center flex-1">
                         <div className="flex items-center space-x-8">
                             {/* Left Navigation Links */}
-                            <a href="#about" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
+                            {/* <a href="#about" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 About Us
-                            </a>
-                            <a href="#services" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
-                                Our Services
+                            </a> */}
+                            <a href="/about-the-game" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
+                                About the game
                             </a>
 
                             {/* Logo - Center */}
                             <a href="/">
-                            <div className="mx-12">
-                                <img src={Logo} alt="Greyhound Winners" className="h-16 object-contain rounded-lg p-3 bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl transform hover:scale-110 transition-all duration-300 hover:shadow-2xl" />
-                            </div>
+                                <div className="mx-12">
+                                    <img src={Logo} alt="Greyhound Winners" className="h-16 object-contain rounded-lg p-3 bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl transform hover:scale-110 transition-all duration-300 hover:shadow-2xl" />
+                                </div>
                             </a>
                             {/* Right Navigation Links */}
-                            <a href="#integrations" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
+                            {/* <a href="#integrations" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 Integrations
-                            </a>
+                            </a> */}
                             <a href="/form" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 Support
                             </a>
@@ -43,10 +43,11 @@ export default function NavBar() {
                     </div>
 
                     {/* Mobile Logo - Center */}
-                    <div className="lg:hidden flex-1 flex justify-center">
-                        <img src={Logo} alt="Greyhound Winners" className="h-16 object-contain rounded-lg p-3 bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl transform hover:scale-110 transition-all duration-300 hover:shadow-2xl" />
-                    </div>
-
+                    <a href="/">
+                        <div className="lg:hidden flex-1 flex justify-center">
+                            <img src={Logo} alt="Greyhound Winners" className="h-16 object-contain rounded-lg p-3 bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl transform hover:scale-110 transition-all duration-300 hover:shadow-2xl" />
+                        </div>
+                    </a>
                     {/* Mobile Hamburger Menu Button */}
                     <div className="lg:hidden">
                         <button
@@ -69,28 +70,14 @@ export default function NavBar() {
                 <div className={`lg:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     <div className="py-4 space-y-4 bg-white/5 backdrop-blur-sm rounded-lg mt-2 border border-white/10">
                         <a
-                            href="#about"
+                            href="/about-the-game"
                             className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            About Us
+                            About the game
                         </a>
                         <a
-                            href="#services"
-                            className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Our Services
-                        </a>
-                        <a
-                            href="#integrations"
-                            className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Integrations
-                        </a>
-                        <a
-                            href="#support"
+                            href="/form"
                             className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
                             onClick={() => setIsMenuOpen(false)}
                         >

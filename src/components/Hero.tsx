@@ -27,20 +27,20 @@ export default function Hero() {
                             </span>
                         </h1>
                         <p className="text-xl lg:text-2xl text-white/90 font-medium leading-relaxed">
-                            a new revenue-driving game as portfolio 
+                            a new revenue-driving game as portfolio
                         </p>
                     </div>
 
-                    {/* Call to action buttons */}
-                    <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    {/* Call to action buttons - Desktop only */}
+                    <div className="hidden lg:flex flex-col sm:flex-row justify-center gap-4 mt-8">
                         <a href="/form" className="bg-gradient-to-r from-grey-neutral to-grey-neutral/80 hover:from-grey-neutral/80 hover:to-grey-neutral/60 text-gw-red font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-grey-neutral/50 flex items-center justify-center space-x-2">
                             <span>Request Pricing</span>
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-                                </svg>
-                            </a>
+                            </svg>
+                        </a>
                         <a href="https://abeta.co.uk/gw-demo" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full border-2 border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
-                            <span>Watch Demo</span>
+                            <span>Visit Demo</span>
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
                             </svg>
@@ -74,6 +74,24 @@ export default function Hero() {
                     <div className="absolute top-6 right-6 bg-grey-neutral text-gw-red px-4 py-2 rounded-full font-bold text-sm shadow-xl">
                         #1 virtual greyhounds racing platform
                     </div>
+                </div>
+            </div>
+
+            {/* Call to action buttons - Mobile only (at bottom) */}
+            <div className="lg:hidden w-full px-6 pb-8 relative z-10">
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/form" className="bg-gradient-to-r from-grey-neutral to-grey-neutral/80 hover:from-grey-neutral/80 hover:to-grey-neutral/60 text-gw-red font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-grey-neutral/50 flex items-center justify-center space-x-2">
+                        <span>Request Pricing</span>
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="https://abeta.co.uk/gw-demo" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full border-2 border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                        <span>Visit Demo</span>
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
