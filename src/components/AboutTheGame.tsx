@@ -1,5 +1,5 @@
 import React from "react";
-import GreyhoundVideo from "../Assets/Videos/GW_video.mp4"
+// import GreyhoundVideo from "../Assets/Videos/GW_video.mp4"
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { howToBetItems } from "../data/howToBetData";
 
@@ -15,7 +15,7 @@ export default function AboutTheGame() {
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 mb-12">
                     <video className="h-full w-full rounded-lg" controls autoPlay>
-                        <source src={GreyhoundVideo} type="video/mp4" />
+                        {/* <source src={GreyhoundVideo} type="video/mp4" /> */}
                     </video>
                 </div>
 
