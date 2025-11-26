@@ -10,7 +10,7 @@ export default function Hero() {
             </div>
             <div className="m-8 md:w-1/2">
                 <h1 className="text-4xl font-bold text-white" style={{ marginBottom: '2rem' }}>
-                    a new revenue-driving game as portfolio
+                    A new revenue-driving game as part of your portfolio
                 </h1>
                 <div>
                     <p className="text-lg text-white/90 leading-relaxed max-w-2xl" style={{ marginBottom: '2rem' }}>
