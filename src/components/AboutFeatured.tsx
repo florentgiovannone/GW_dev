@@ -26,7 +26,8 @@ export default function AboutFeatured() {
                 </div>
                 <div className="w-full md:w-1/2 md:px-4">
                     <h1 className="text-2xl font-bold text-white mb-6 lg:text-4xl">
-                        FEATURES               </h1>
+                        FEATURES               
+                        </h1>
                     <div>
                         <div className="flex flex-row items-center gap-4 mb-6">
                             <img src={One} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
@@ -66,7 +67,7 @@ export default function AboutFeatured() {
                     </div>
                 </div>
                 <div className="flex flex-row items-center gap-4 mb-8 justify-center w-full md:w-full pt-4">
-                    <a href="https://abeta.co.uk/gw-demo" target="_blank" rel="noopener noreferrer" className="bg-grey-neutral text-white px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-md hover:shadow-white/10 hover:bg-white/10">
+                    <a href="/form" target="_blank" rel="noopener noreferrer" className="bg-grey-neutral text-white px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-md hover:shadow-white/10 hover:bg-white/10">
                         Request Demo
                     </a>
                 </div>
