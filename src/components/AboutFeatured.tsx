@@ -21,7 +21,7 @@ export default function AboutFeatured() {
                     </div>
                     <div>
                         <p className="text-md text-white/90 leading-relaxed max-w-2xl mb-6 lg:text-lg">
-                            With six different markets available in every event, GREYHOUND WINNERS offers something for everyone — from casual customers to regular greyhound followers. The mix of simple sequences, number totals, accumulators and pattern games keeps interest high and creates a steady stream of winning moments.                </p>
+                            With six different markets available in every event, GREYHOUND WINNERS offers something for everyone, from casual customers to regular greyhound followers. The mix of simple sequences, number totals, accumulators and pattern games keeps interest high and creates a steady stream of winning moments.                </p>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 md:px-4">
@@ -31,36 +31,36 @@ export default function AboutFeatured() {
                         <div className="flex flex-row items-center gap-4 mb-6">
                             <img src={One} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl lg:text-lg">
-                                Six easy-to-play markets, including traditional betting                        </p>
+                                Six easy-to-play markets, including traditional betting.                   </p>
                         </div>
                         <div className="flex flex-row items-center gap-4 mb-6">
                             <img src={Two} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl lg:text-lg">
-                                Powered by real footage and licensed data
+                                Powered by real footage and licensed data.
                             </p>
                         </div>
                         <div className="flex flex-row items-center gap-4 mb-6">
                             <img src={Three} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl lg:text-lg">
-                                A new betting event in less than 4 minutes
+                                A new betting event in less than 4 minutes.
                             </p>
                         </div>
                         <div className="flex flex-row items-center gap-4 mb-6">
                             <img src={Four} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl lg:text-lg">
-                                Automatic reset into the next event
+                                Automatic reset into the next event.
                             </p>
                         </div>
                         <div className="flex flex-row items-center gap-4 mb-8">
                             <img src={Five} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl lg:text-lg">
-                                Suitable for single shops and multi-shop estates
+                                Suitable for single shops and multi-shop estates.
                             </p>
                         </div>
                         <div className="flex flex-row items-center gap-4 mb-8">
                             <img src={Six} alt="Greyhound" className="w-6 h-6 flex-shrink-0 lg:w-10 lg:h-10" />
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl lg:text-lg">
-                                Reliable all-day operation
+                                Reliable all-day operation.
                             </p>
                         </div>
                     </div>
