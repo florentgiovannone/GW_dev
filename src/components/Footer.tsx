@@ -31,8 +31,8 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
                         <ul className="space-y-3">
                             <li><a href="/" className="text-white/70 hover:text-white transition-colors duration-300">Home</a></li>
-                            <li><a href="/about-the-game" className="text-white/70 hover:text-white transition-colors duration-300">About the game</a></li>            
-                            <li><a href="/form" className="text-white/70 hover:text-white transition-colors duration-300">Support</a></li>
+                            {/* <li><a href="/about-the-game" className="text-white/70 hover:text-white transition-colors duration-300">About the game</a></li>             */}
+                            {/* <li><a href="/form" className="text-white/70 hover:text-white transition-colors duration-300">Support</a></li> */}
                         </ul>
                     </div>
 
