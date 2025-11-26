@@ -9,15 +9,17 @@ import AboutTheGame from './components/AboutTheGame'
 
 function App() {
   return (<>
-    <div className="min-h-screen">
+    <div className="min-h-screen font-sans leading-relaxed text-gray-800 bg-gradient-to-br from-gw-red to-gw-purple">
       <Router >
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/about-the-game" element={<AboutTheGame />} />
-        </Routes>
-        <Footer />
+        <div className="overflow-x-hidden">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/form" element={<Form />} />
+            <Route path="/about-the-game" element={<AboutTheGame />} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </div>
     {/* <div className="min-h-screen">

@@ -22,9 +22,9 @@ export default function NavBar() {
                             {/* <a href="#about" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 About Us
                             </a> */}
-                            <a href="/about-the-game" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
+                            {/* <a href="/about-the-game" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 About the game
-                            </a>
+                            </a> */}
 
                             {/* Logo - Center */}
                             <a href="/">
@@ -36,9 +36,9 @@ export default function NavBar() {
                             {/* <a href="#integrations" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 Integrations
                             </a> */}
-                            <a href="/form" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
+                            {/* <a href="/form" className="text-white hover:text-grey-neutral transition-colors duration-300 font-medium">
                                 Support
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@ export default function NavBar() {
                     </a>
                     {/* Mobile Hamburger Menu Button */}
                     <div className="lg:hidden">
-                        <button
+                        {/* <button
                             onClick={toggleMenu}
                             className="text-white hover:text-grey-neutral focus:outline-none focus:text-grey-neutral transition-colors duration-300"
                             aria-label="Toggle menu"
@@ -62,27 +62,27 @@ export default function NavBar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                                 )}
                             </svg>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
                 <div className={`lg:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     <div className="py-4 space-y-4 bg-white/5 backdrop-blur-sm rounded-lg mt-2 border border-white/10">
-                        <a
+                        {/* <a
                             href="/about-the-game"
                             className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             About the game
-                        </a>
-                        <a
+                        </a> */}
+                        {/* <a
                             href="/form"
                             className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Support
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>
