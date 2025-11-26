@@ -72,7 +72,7 @@ export default function MarketTypes() {
                     Watch our demo video
                 </h1>
                 <div className="flex justify-center">
-                    <video src="https://old.abeta.co.uk/resources/GW_video.mp4" autoPlay controls className="w-full max-w-2xl rounded-lg shadow-lg" />
+                    <video src="https://old.abeta.co.uk/resources/GW_video.mp4" controls className="w-full max-w-2xl rounded-lg shadow-lg" />
                 </div>
             </div>
         </div>
