@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <nav className="sticky top-0 z-50 px-4 py-2 backdrop-blur-[20px] bg-white/10 border-b border-white/20 shadow-lg">
             <div className="container mx-auto">
-                <div className="flex items-center justify-between h-24">
+                <div className="flex items-center justify-between h-16">
                     {/* Spacer for mobile hamburger alignment */}
                     <div className="lg:hidden w-6"></div>
 

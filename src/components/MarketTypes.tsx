@@ -68,11 +68,12 @@ export default function MarketTypes() {
                         </div>
                     ))}
                 </div>
-            </div>
-            <h1 className="text-2xl font-bold text-gw-purple mt-12 mb-12 lg:text-4xl">
-                Watch our demo video            </h1>
-            <div className="flex justify-center">
-                <video src="https://old.abeta.co.uk/resources/GW_video.mp4" autoPlay controls className="w-full max-w-2xl rounded-lg shadow-lg" />
+                <h1 className="text-2xl font-bold text-gw-purple mt-24 mb-12 lg:text-4xl">
+                    Watch our demo video
+                </h1>
+                <div className="flex justify-center">
+                    <video src="https://old.abeta.co.uk/resources/GW_video.mp4" autoPlay controls className="w-full max-w-2xl rounded-lg shadow-lg" />
+                </div>
             </div>
         </div>
     )
