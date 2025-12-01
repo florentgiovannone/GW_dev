@@ -1,4 +1,124 @@
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+
 export default function Form() {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        inquiry: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setErrorMessage('');
+
+        try {
+            // Replace these with your EmailJS credentials
+            // Get these from: https://dashboard.emailjs.com/
+            const serviceId = 'service_0u1o2gi';
+            const businessTemplateId = 'template_tbkvn1q'; // Template for business (form submission)
+            const confirmationTemplateId = 'template_qeb4yw9'; // TODO: Replace with your confirmation template ID once created
+            const publicKey = 'x0eBc6hhd5L7RK5fE';
+
+            // Prepare template parameters for business email (form submission)
+            const businessTemplateParams = {
+                to_email: 'florent.giovannone@abeta.co.uk',
+                from_name: `${formData.firstName} ${formData.lastName}`,
+                from_email: formData.email,
+                first_name: formData.firstName,
+                last_name: formData.lastName,
+                phone: formData.phone || 'Not provided',
+                company: formData.company,
+                inquiry_type: formData.inquiry,
+                inquiry: formData.inquiry,
+                message: formData.message,
+            };
+
+            console.log('Sending business email with params:', businessTemplateParams);
+
+            // Send email to business (form submission)
+            await emailjs.send(
+                serviceId,
+                businessTemplateId,
+                businessTemplateParams,
+                publicKey
+            );
+
+            // Send confirmation email to client
+            // Create a new template in EmailJS with "To Email" set to {{to_email}}
+            // Or update existing template to use {{to_email}} variable
+            const confirmationTemplateParams = {
+                to_email: formData.email, // Send confirmation to the client
+                client_name: `${formData.firstName} ${formData.lastName}`,
+                first_name: formData.firstName,
+                company: formData.company,
+                inquiry_type: formData.inquiry,
+            };
+
+            console.log('Sending confirmation email to client:', confirmationTemplateParams);
+
+            // Send confirmation email to client
+            // Note: Make sure your EmailJS template has "To Email" set to {{to_email}}
+            try {
+                await emailjs.send(
+                    serviceId,
+                    confirmationTemplateId,
+                    confirmationTemplateParams,
+                    publicKey
+                );
+            } catch (confirmationError: any) {
+                console.warn('Confirmation email failed:', confirmationError);
+                // Don't fail the whole submission if confirmation email fails
+                // The business email was already sent successfully
+            }
+
+            setSubmitStatus('success');
+            // Reset form
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                company: '',
+                inquiry: '',
+                message: ''
+            });
+        } catch (error: any) {
+            console.error('EmailJS error:', error);
+            let errorMsg = 'Failed to send message. Please try again or contact us directly at florent.giovannone@abeta.co.uk';
+
+            // Provide more specific error messages
+            if (error?.text) {
+                errorMsg = `Error: ${error.text}`;
+            } else if (error?.message) {
+                errorMsg = `Error: ${error.message}`;
+            } else if (error?.status) {
+                errorMsg = `Error ${error.status}: ${error.text || 'Please check your EmailJS template variables match the form data.'}`;
+            }
+
+            setSubmitStatus('error');
+            setErrorMessage(errorMsg);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className="bg-gradient-to-b from-gw-purple to-black py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +164,17 @@ export default function Form() {
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
                             <h2 className="text-2xl font-bold text-white mb-8">Send us a Message</h2>
 
-                            <form className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
+                                {submitStatus === 'success' && (
+                                    <div className="bg-green-500/20 border border-green-500/50 text-green-200 px-4 py-3 rounded-lg mb-4">
+                                        <p className="font-semibold">Message sent successfully! We'll get back to you soon.</p>
+                                    </div>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg mb-4">
+                                        <p className="font-semibold">{errorMessage || 'Failed to send message. Please try again.'}</p>
+                                    </div>
+                                )}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label htmlFor="firstName" className="block text-sm font-semibold text-white mb-2">First Name *</label>
@@ -52,6 +182,8 @@ export default function Form() {
                                             id="firstName"
                                             type="text"
                                             name="firstName"
+                                            value={formData.firstName}
+                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Enter your first name"
@@ -63,6 +195,8 @@ export default function Form() {
                                             id="lastName"
                                             type="text"
                                             name="lastName"
+                                            value={formData.lastName}
+                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Enter your last name"
@@ -77,6 +211,8 @@ export default function Form() {
                                             id="email"
                                             type="email"
                                             name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="your.email@company.com"
@@ -88,6 +224,8 @@ export default function Form() {
                                             id="phone"
                                             type="tel"
                                             name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="+44 1234 567890"
                                         />
@@ -101,6 +239,8 @@ export default function Form() {
                                             id="company"
                                             type="text"
                                             name="company"
+                                            value={formData.company}
+                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Your company name"
@@ -111,6 +251,8 @@ export default function Form() {
                                         <select
                                             id="inquiry"
                                             name="inquiry"
+                                            value={formData.inquiry}
+                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
                                         >
@@ -132,6 +274,8 @@ export default function Form() {
                                     <textarea
                                         id="message"
                                         name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
                                         rows={6}
                                         required
                                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300 resize-vertical"
@@ -143,13 +287,26 @@ export default function Form() {
                                     <p className="text-white/60 text-sm">* Required fields</p>
                                     <button
                                         type="submit"
-                                        className="bg-white border-[5px] border-gw-red text-gw-red hover:bg-gw-red hover:text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gw-red/50"
+                                        disabled={isSubmitting}
+                                        className="bg-white border-[5px] border-gw-red text-gw-red hover:bg-gw-red hover:text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gw-red/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                     >
                                         <span className="flex items-center space-x-2">
-                                            <span>Send Message</span>
-                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-                                            </svg>
+                                            {isSubmitting ? (
+                                                <>
+                                                    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    <span>Sending...</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <span>Send Message</span>
+                                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                                                    </svg>
+                                                </>
+                                            )}
                                         </span>
                                     </button>
                                 </div>
