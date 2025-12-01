@@ -1,49 +1,4 @@
-import { useState } from "react";
-
 export default function Form() {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        inquiry: '',
-        message: ''
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-
-        // Format the email body
-        const subject = encodeURIComponent(`Contact Form: ${formData.inquiry || 'General Inquiry'}`);
-        const body = encodeURIComponent(
-            `New Contact Form Submission\n\n` +
-            `First Name: ${formData.firstName}\n` +
-            `Last Name: ${formData.lastName}\n` +
-            `Email: ${formData.email}\n` +
-            `Phone: ${formData.phone || 'Not provided'}\n` +
-            `Company: ${formData.company}\n` +
-            `Inquiry Type: ${formData.inquiry}\n\n` +
-            `Message:\n${formData.message}`
-        );
-
-        // Create mailto link
-        const mailtoLink = `mailto:info@greyhoundwinners.com?subject=${subject}&body=${body}`;
-
-        // Open email client
-        window.location.href = mailtoLink;
-
-        // Show success message
-        alert('Your email client will open with a pre-filled message. Please review and send the email.');
-    };
-
     return (
         <div className="bg-gradient-to-b from-gw-purple to-black py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,7 +44,7 @@ export default function Form() {
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
                             <h2 className="text-2xl font-bold text-white mb-8">Send us a Message</h2>
 
-                            <form className="space-y-6" onSubmit={handleSubmit}>
+                            <form className="space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label htmlFor="firstName" className="block text-sm font-semibold text-white mb-2">First Name *</label>
@@ -97,8 +52,6 @@ export default function Form() {
                                             id="firstName"
                                             type="text"
                                             name="firstName"
-                                            value={formData.firstName}
-                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Enter your first name"
@@ -110,8 +63,6 @@ export default function Form() {
                                             id="lastName"
                                             type="text"
                                             name="lastName"
-                                            value={formData.lastName}
-                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Enter your last name"
@@ -126,8 +77,6 @@ export default function Form() {
                                             id="email"
                                             type="email"
                                             name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="your.email@company.com"
@@ -139,8 +88,6 @@ export default function Form() {
                                             id="phone"
                                             type="tel"
                                             name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="+44 1234 567890"
                                         />
@@ -154,8 +101,6 @@ export default function Form() {
                                             id="company"
                                             type="text"
                                             name="company"
-                                            value={formData.company}
-                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Your company name"
@@ -166,8 +111,6 @@ export default function Form() {
                                         <select
                                             id="inquiry"
                                             name="inquiry"
-                                            value={formData.inquiry}
-                                            onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
                                         >
@@ -189,8 +132,6 @@ export default function Form() {
                                     <textarea
                                         id="message"
                                         name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
                                         rows={6}
                                         required
                                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300 resize-vertical"
