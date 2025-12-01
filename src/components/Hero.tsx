@@ -39,7 +39,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="flex justify-center mb-8">
-                    <a href="/form" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-gw-red to-red-tint-60 hover:from-red-tint-60 hover:to-gw-red text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gw-red/50">
+                    <a href="/form" className="bg-white border-[5px] border-gw-red text-gw-red hover:bg-gw-red hover:text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gw-red/50">
                         <span className="flex items-center space-x-2">
                             <span>Request Demo</span>
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

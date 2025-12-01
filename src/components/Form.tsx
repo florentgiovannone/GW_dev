@@ -143,7 +143,7 @@ export default function Form() {
                                     <p className="text-white/60 text-sm">* Required fields</p>
                                     <button
                                         type="submit"
-                                        className="bg-gradient-to-r from-gw-red to-red-tint-60 hover:from-red-tint-60 hover:to-gw-red text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gw-red/50"
+                                        className="bg-white border-[5px] border-gw-red text-gw-red hover:bg-gw-red hover:text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gw-red/50"
                                     >
                                         <span className="flex items-center space-x-2">
                                             <span>Send Message</span>
