@@ -28,9 +28,9 @@ export default function Footer() {
                     </div>
 
                     {/* Website */}
-                    <div className="flex items-center justify-center space-x-3 mb-8">
-                        <svg className="w-5 h-5 text-grey-neutral" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.797 3.556h3.998c-.124-1.414-.408-2.649-.797-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.92 7c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9H13.92zM10 18a8 8 0 01-5.917-2.846A6.003 6.003 0 0113.92 11H6.08a6.003 6.003 0 019.837 4.154A8 8 0 0110 18z" clipRule="evenodd" />
+                    <div className="flex items-center justify-center space-x-3">
+                        <svg className="w-5 h-5 text-grey-neutral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>
                         <a href="https://greyhound-winners.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm hover:text-white transition-colors duration-300">
                             greyhound-winners.com
