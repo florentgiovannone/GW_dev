@@ -9,7 +9,7 @@ import AboutTheGame from './components/AboutTheGame'
 
 function App() {
   return (<>
-    <div className="min-h-screen font-sans leading-relaxed text-gray-800 bg-gradient-to-br from-gw-red to-gw-purple">
+    <div className="min-h-screen font-sans leading-relaxed text-gray-800 bg-gradient-to-b from-gw-purple to-black">
       <Router >
         <NavBar />
         <div className="overflow-x-hidden">

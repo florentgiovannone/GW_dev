@@ -31,40 +31,8 @@ export default function Form() {
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-white font-semibold">General Inquiries</p>
+                                        <p className="text-white font-semibold">Email</p>
                                         <p className="text-white/70">info@greyhoundwinners.com</p>
-                                    </div>
-                                </div>
-
-                                {/* Sales Email */}
-                                <div className="flex items-center space-x-4">
-                                    <div className="bg-gw-red p-3 rounded-full">
-                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p className="text-white font-semibold">Sales</p>
-                                        <p className="text-white/70">sales@greyhoundwinners.com</p>
-                                    </div>
-                                </div>
-
-                                {/* Address */}
-                                <div className="flex items-start space-x-4">
-                                    <div className="bg-gw-red p-3 rounded-full">
-                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p className="text-white font-semibold">Address</p>
-                                        <div className="text-white/70 text-sm leading-relaxed">
-                                            <p>Technology House</p>
-                                            <p>Station Road</p>
-                                            <p>Alton, Hampshire</p>
-                                            <p>GU34 2PZ</p>
-                                            <p>United Kingdom</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
