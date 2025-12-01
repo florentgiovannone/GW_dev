@@ -1,6 +1,5 @@
 import Logo from "../Assets/Images/Greyhound-Winners-White.png"
-import Greyhound from "../Assets/Images/Greyhound.png"
-import GreyhoundGif from "../Assets/Videos/GreyhoundGif.gif"
+import Greyhound from "../Assets/Images/Mockup.png"
 import BackgroundImage from "../Assets/Images/gw-background.jpg"
 
 export default function Hero() {
@@ -32,9 +31,6 @@ export default function Hero() {
                         <div>
                             <p className="text-md text-white/90 leading-relaxed max-w-2xl" style={{ marginBottom: '2rem' }}>
                                 Featuring authentic historical race footage and fully configurable betting markets, <span className="font-bold">GREYHOUND WINNERS</span> gives operators <span className="font-bold">an unique, innovative, fast-paced, automated virtual racing product</span> tailored to engage every type of customer.                    </p>
-                        </div>
-                        <div className=" mt-4">
-                            <h3 className="text-2xl text-white">for Betting Operators</h3>
                         </div>
                     </div>
                 </div>
