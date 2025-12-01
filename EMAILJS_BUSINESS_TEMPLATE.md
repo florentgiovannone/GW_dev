@@ -10,9 +10,21 @@ This template is for receiving form submissions at your business email.
 
 **To Email:** `florent.giovannone@abeta.co.uk` (or use `{{to_email}}` if you want it dynamic)
 
-**From Name:** `Greyhound Winners Contact Form` (or `{{from_name}}`)
+**From Email:** `{{from_email}}` (NOTE: This may not work with all email services - see limitations below)
+
+**From Name:** `{{from_name}}` (or `Greyhound Winners Contact Form` if you prefer a static name)
 
 **Reply To:** `{{from_email}}` (so you can reply directly to the person who submitted the form)
+
+### ⚠️ Important Note About "From Email"
+
+**EmailJS Limitations:** Most email services (Gmail, Outlook, etc.) don't allow arbitrary "From" addresses for security reasons. If `{{from_email}}` doesn't work, the email will use your service's default/verified email address.
+
+**If you need the email to appear from the client's address:**
+
+1. Check if your EmailJS email service supports dynamic "From" addresses
+2. You may need to use a service like SendGrid or Mailgun that allows this with proper domain verification
+3. Alternatively, keep a static "From" address and make the client's identity clear in the email content (which is already done with `{{from_name}}` and Reply-To)
 
 ## Subject Line
 
