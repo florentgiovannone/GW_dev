@@ -4,7 +4,7 @@ import BackgroundImage from "../Assets/Images/gw-background.jpg"
 
 export default function Hero() {
     return (
-        <div className="bg-gradient-to-b from-gw-purple to-black h-210 md:h-130 lg:h-150 relative overflow-hidden">
+        <div className="bg-gradient-to-b from-gw-purple to-black min-h-210 md:min-h-130 lg:min-h-150 relative overflow-hidden">
             <img
                 src={BackgroundImage}
                 alt=""
@@ -18,9 +18,9 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-b from-gw-purple/80 to-black/80 z-10"></div>
             <div className="relative z-20">
                 <div className=" flex flex-col justify-center items-center  md:flex-row md:columns-2 m-8" >
-                    <div className=" w-full md:w-1/2 max-w-lg md:max-w-lg">
+                    <div className=" w-full md:w-1/2 max-w-lg md:max-w-lg m-16">
                         <img src={Greyhound} alt="Greyhound Winners Racing"
-                            className="w-full h-auto object-contain max-w-full"
+                            className="w-full object-contain max-w-full h-50 md:h-auto"
                         />
 
                     </div>
