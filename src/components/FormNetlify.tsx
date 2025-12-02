@@ -4,19 +4,29 @@ import { useNavigate } from 'react-router-dom';
 export default function Form() {
     const navigate = useNavigate();
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const myForm = event.target as HTMLFormElement;
         const formData = new FormData(myForm);
 
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(Array.from(formData.entries()).map(([key, value]) => [key, String(value)]) as [string, string][]).toString()
-        })
-            .then(() => navigate("/form-success"))
-            .catch(error => alert(error));
+        try {
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(Array.from(formData.entries()).map(([key, value]) => [key, String(value)]) as [string, string][]).toString()
+            });
+
+            if (response.ok) {
+                navigate("/form-success");
+            } else {
+                console.error('Form submission failed:', response.status, response.statusText);
+                alert(`Form submission failed. Please try again or contact us directly.`);
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert(`An error occurred: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
     };
 
     return (
@@ -75,8 +85,12 @@ export default function Form() {
 
                                 {/* Hidden field for Netlify Forms */}
                                 <input type="hidden" name="form-name" value="contact" />
+
+                                {/* Honeypot field for spam protection - must be empty! */}
                                 <div className="hidden">
-                                    <input name="bot-field" value="bot-field" />
+                                    <label>
+                                        Don't fill this out if you're human: <input name="bot-field" />
+                                    </label>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
