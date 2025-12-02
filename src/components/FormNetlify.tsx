@@ -47,14 +47,14 @@ export default function Form() {
                             <h2 className="text-2xl font-bold text-white mb-8">Send us a Message</h2>
 
                             <form
-                                name="contact v1"
+                                name="contact"
                                 method="post"
                                 data-netlify="true"
                                 className="space-y-6"
                                 netlify-honeypot="bot-field"
                             >
                                 {/* Hidden field for Netlify Forms */}
-                                <input type="hidden" name="form-name" value="contact v1" />
+                                <input type="hidden" name="form-name" value="contact" />
 
                                 {/* Honeypot field for spam protection */}
                                 <p className="hidden">
