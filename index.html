@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/src/Assets/Images/Greyhound-Winners-Grey.png"/>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/src/Assets/Images/Greyhound-Winners-Grey.png"
+    />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Greyhound Winners | The New Virtual Racing Game</title>
   </head>
   <body>
+    <!-- Hidden form for Netlify Forms detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="first-name" />
+      <input type="text" name="last-name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <input type="text" name="inquiry" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <!-- Google tag (gtag.js) -->
     <script

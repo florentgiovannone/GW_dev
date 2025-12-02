@@ -15,7 +15,7 @@ export default function Form() {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(Array.from(formData.entries()).map(([key, value]) => [key, String(value)]) as [string, string][]).toString()
         })
-            .then(() => navigate("/thank-you/"))
+            .then(() => navigate("/"))
             .catch(error => alert(error));
     };
 
