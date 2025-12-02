@@ -42,7 +42,7 @@ export default function Footer() {
                 <div className="border-t border-white/20 pt-8">
                     <div className="text-center">
                         <div className="text-white/60 text-sm">
-                            © 2024 Greyhound Winners. All rights reserved.
+                            © 2025 Greyhound Winners. All rights reserved.
                         </div>
                     </div>
                 </div>
