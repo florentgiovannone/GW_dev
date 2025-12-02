@@ -167,7 +167,7 @@ const handler: Handler = async (
         <div class="field">
             <div class="label">Inquiry Type</div>
             <div class="value">${inquiry}</div>
-        /div>
+        </div>
         <div class="message-box">
             <div class="label">Message</div>
             <div class="value" style="white-space: pre-wrap; margin-top: 10px;">${formData.message || ''}</div>
@@ -207,6 +207,107 @@ You can reply directly to this email to respond to ${firstName} ${lastName}.
             html: htmlEmail,
             text: textEmail,
         });
+
+        if (formData.email) {
+            const confirmationHtml = `
+    <!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        body { 
+        font-family: Arial, sans-serif; 
+        max-width: 600px; 
+        margin: 0 auto; 
+        padding: 20px; 
+        background-color: #f5f5f5;
+        }
+        .container {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header { 
+        background: linear-gradient(135deg, #540713 0%, #86000D 100%); 
+        color: white; 
+        padding: 30px 20px; 
+        text-align: center;
+        }
+        .header h2 {
+        margin: 0;
+        font-size: 24px;
+        }
+        .content { 
+        padding: 30px 20px; 
+        }
+        .message {
+        color: #333;
+        font-size: 16px;
+        line-height: 1.6;
+        }
+        .footer {
+        background: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        }
+        a {
+        color: #86000D;
+        text-decoration: none;
+        }
+        a:hover {
+        text-decoration: underline;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="header">
+        <h2>Thank You for Contacting Greyhound Winners</h2>
+        </div>
+        <div class="content">
+        <div class="message">
+            <p>Dear ${firstName} ${lastName},</p>
+            <p>Thank you for reaching out to Greyhound Winners. We have received your ${inquiry} inquiry and will get back to you as soon as possible.</p>
+            <p>We appreciate your interest in our virtual racing platform and look forward to discussing how we can help your business.</p>
+            <p>Best regards,<br>The Greyhound Winners Team</p>
+        </div>
+        </div>
+        <div class="footer">
+        <p>This is an automated confirmation email.</p>
+        <p>If you have any questions, please contact us at <a href="mailto:info@greyhoundwinners.com">info@greyhoundwinners.com</a></p>
+        </div>
+    </div>
+    </body>
+</html>
+    `;
+
+            const confirmationText = `
+Thank You for Contacting Greyhound Winners
+
+Dear ${firstName} ${lastName},
+
+Thank you for reaching out to Greyhound Winners. We have received your ${inquiry} inquiry and will get back to you as soon as possible.
+
+We appreciate your interest in our virtual racing platform and look forward to discussing how we can help your business.
+
+Best regards,
+The Greyhound Winners Team
+
+---
+This is an automated confirmation email.
+If you have any questions, please contact us at info@greyhoundwinners.com
+    `;
+
+            await transporter.sendMail({
+                from: `"Greyhound Winners" <${smtpUser}>`,
+                to: formData.email,
+                subject: `Thank You for Contacting Greyhound Winners`,
+                html: confirmationHtml,
+                text: confirmationText,
+            });
+        }
 
         return {
             statusCode: 200,
