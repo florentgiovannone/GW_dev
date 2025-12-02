@@ -54,7 +54,7 @@ export default function Form() {
                                 netlify-honeypot="bot-field"
                             >
                                 {/* Hidden field for Netlify Forms */}
-                                <input type="hidden" name="form-name" value="contact  v1" />
+                                <input type="hidden" name="form-name" value="contact v1" />
 
                                 {/* Honeypot field for spam protection */}
                                 <p className="hidden">
