@@ -18,7 +18,7 @@ export default function Form() {
             .then(() => navigate("/thank-you/"))
             .catch(error => alert(error));
     };
-    
+
     return (
         <div className="bg-gradient-to-b from-gw-purple to-black py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,6 +70,7 @@ export default function Form() {
                                 data-netlify="true"
                                 className="space-y-6"
                                 netlify-honeypot="bot-field"
+                                onSubmit={handleSubmit}
                             >
                                 {/* Hidden field for Netlify Forms */}
                                 <input type="hidden" name="form-name" value="contact" />
