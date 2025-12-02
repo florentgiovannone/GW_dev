@@ -67,6 +67,8 @@ export default function NavBar() {
                             href="/"
                             className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
                             onClick={() => setIsMenuOpen(false)}
+                            id="home-link"
+                            aria-label="Home"
                         >
                             Home
                         </a>
@@ -74,6 +76,8 @@ export default function NavBar() {
                             href="/form"
                             className="block px-6 py-2 text-white hover:text-grey-neutral hover:bg-white/10 transition-all duration-300 font-medium"
                             onClick={() => setIsMenuOpen(false)}
+                            id="contact-us-link"
+                            aria-label="Contact Us"
                         >
                             Contact Us
                         </a>
