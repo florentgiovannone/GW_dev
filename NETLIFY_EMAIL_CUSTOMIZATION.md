@@ -168,7 +168,7 @@ export { handler };
 
 1. Go to **Forms** → Your form → **Notifications**
 2. Click **Add notification** → **Webhook**
-3. Enter webhook URL: `https://your-site.netlify.app/.netlify/functions/form-submission`
+3. Enter webhook URL: `https://gwin-dev.netlify.app/.netlify/functions/form-submission`
 4. Click **Save**
 
 ### Step 3: Set Environment Variables
