@@ -71,17 +71,14 @@ export default function Form() {
                                 className="space-y-6"
                                 netlify-honeypot="bot-field"
                                 onSubmit={handleSubmit}
+                                data-netlify-bot-field="bot-field"
                             >
 
                                 {/* Hidden field for Netlify Forms */}
                                 <input type="hidden" name="form-name" value="contact" />
-
-                                {/* Honeypot field for spam protection */}
-                                <p className="hidden">
-                                    <label>
-                                        Don't fill this out if you're human: <input name="bot-field" />
-                                    </label>
-                                </p>
+                                <div className="hidden">
+                                    <input name="bot-field" value="bot-field" />
+                                </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
