@@ -1,6 +1,24 @@
 import React from 'react';
-export default function Form() {
+import { useNavigate } from 'react-router-dom';
 
+export default function Form() {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const myForm = event.target as HTMLFormElement;
+        const formData = new FormData(myForm);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(Array.from(formData.entries()).map(([key, value]) => [key, String(value)]) as [string, string][]).toString()
+        })
+            .then(() => navigate("/thank-you/"))
+            .catch(error => alert(error));
+    };
+    
     return (
         <div className="bg-gradient-to-b from-gw-purple to-black py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
