@@ -1,3 +1,4 @@
+import React from 'react';
 export default function Form() {
 
     return (
@@ -49,27 +50,20 @@ export default function Form() {
                                 name="contact v1"
                                 method="POST"
                                 data-netlify="true"
-                                netlify-honeypot="bot-field"
                                 className="space-y-6"
-                                onSubmit='submit'
+                                onSubmit="submit"
                             >
                                 {/* Hidden field for Netlify Forms */}
                                 <input type="hidden" name="form-name" value="contact  v1" />
 
-                                {/* Honeypot field for spam protection */}
-                                <p className="hidden">
-                                    <label>
-                                        Don't fill this out if you're human: <input name="bot-field" />
-                                    </label>
-                                </p>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label htmlFor="firstName" className="block text-sm font-semibold text-white mb-2">First Name *</label>
                                         <input
-                                            id="firstName"
+                                            id="first-name"
                                             type="text"
-                                            name="firstName"
+                                            name="first-name"
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Enter your first name"
@@ -78,9 +72,9 @@ export default function Form() {
                                     <div>
                                         <label htmlFor="lastName" className="block text-sm font-semibold text-white mb-2">Last Name *</label>
                                         <input
-                                            id="lastName"
+                                            id="last-name"
                                             type="text"
-                                            name="lastName"
+                                            name="last-name"
                                             required
                                             className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gw-red focus:border-transparent transition-all duration-300"
                                             placeholder="Enter your last name"
