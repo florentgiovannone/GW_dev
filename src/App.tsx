@@ -17,9 +17,9 @@ function App() {
         <div className="overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/form" element={<Form />} />
+            {/* <Route path="/form" element={<Form />} /> */}
+            <Route path="/form" element={<FormNetlify />} />
             <Route path="/about-the-game" element={<AboutTheGame />} />
-            <Route path="/form-netlify" element={<FormNetlify />} />
             <Route path="/form-success" element={<FormSuccess />} />
           </Routes>
           <Footer />
