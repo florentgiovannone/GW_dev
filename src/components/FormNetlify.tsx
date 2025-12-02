@@ -51,7 +51,6 @@ export default function Form() {
                                 method="POST"
                                 data-netlify="true"
                                 className="space-y-6"
-                                onSubmit="submit"
                             >
                                 {/* Hidden field for Netlify Forms */}
                                 <input type="hidden" name="form-name" value="contact  v1" />
