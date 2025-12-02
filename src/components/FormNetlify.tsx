@@ -84,7 +84,7 @@ export default function Form() {
                             >
 
                                 {/* Hidden field for Netlify Forms */}
-                                <input type="hidden" name="form-name" value="contact" />
+                                <input type="hidden" name="form-name" value="New lead from %{formName} (%{submissionId})" />
 
                                 {/* Honeypot field for spam protection - must be empty! */}
                                 <div className="hidden">
