@@ -69,9 +69,8 @@ export default function Form() {
                                 method="post"
                                 data-netlify="true"
                                 className="space-y-6"
-                                netlify-honeypot="bot-field"
                                 onSubmit={handleSubmit}
-                                data-netlify-bot-field="bot-field"
+                                data-netlify-honeypot="bot-field"
                             >
 
                                 {/* Hidden field for Netlify Forms */}
