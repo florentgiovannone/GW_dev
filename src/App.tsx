@@ -7,6 +7,7 @@ import Form from "./components/Form"
 import HoldingPage from "./components/HoldingPage"
 import AboutTheGame from './components/AboutTheGame'
 import FormNetlify from "./components/FormNetlify"
+import FormSuccess from "./components/FormSuccess"
 
 function App() {
   return (<>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/form" element={<Form />} />
             <Route path="/about-the-game" element={<AboutTheGame />} />
             <Route path="/form-netlify" element={<FormNetlify />} />
+            <Route path="/form-success" element={<FormSuccess />} />
           </Routes>
           <Footer />
         </div>

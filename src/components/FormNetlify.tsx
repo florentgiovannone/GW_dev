@@ -15,7 +15,7 @@ export default function Form() {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(Array.from(formData.entries()).map(([key, value]) => [key, String(value)]) as [string, string][]).toString()
         })
-            .then(() => navigate("/"))
+            .then(() => navigate("/form-success"))
             .catch(error => alert(error));
     };
 
@@ -72,9 +72,6 @@ export default function Form() {
                                 netlify-honeypot="bot-field"
                                 onSubmit={handleSubmit}
                             >
-                                {/* Hidden field for Netlify Forms */}
-                                <input type="hidden" name="form-name" value="contact" />
-
                                 {/* Honeypot field for spam protection */}
                                 <p className="hidden">
                                     <label>
